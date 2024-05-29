@@ -1,6 +1,7 @@
 Kitchener-Waterloo Cycling Map
 ==============================
 
+
 A map of Kitchener, ON, Canada and Waterloo, ON, Canada, designed with cycling in mind. The map prominently marks:
 
 * Low-speed-limit and high-speed-limit roads.
@@ -8,6 +9,8 @@ A map of Kitchener, ON, Canada and Waterloo, ON, Canada, designed with cycling i
 * Surface materials suitable for road, gravel, or mountain bicycles.
 * Bike parking and public washrooms, including access-controlled secure bicycle lockers.
 * Elevation contours at 10 meter intervals.
+
+# [View Webmap](https://anthony-zhang.me/kw-cycling-map/)
 
 Low-resolution map preview:
 
@@ -17,6 +20,10 @@ Because we combine data directly from multiple regional and municipal open data 
 
 Using the Map
 -------------
+
+### View the webmap online
+
+We've [published an interactive browser-based version of the map](https://anthony-zhang.me/kw-cycling-map/) for easy access. However, this won't work offline and depends on us paying for hosting every month to continue being available.
 
 ### Download as an image
 
@@ -40,7 +47,7 @@ Clone this repo and open `bike-map.qgz` with QGIS 3.22+. Some notes:
 * The [Map Printer plugin for QGIS](https://plugins.qgis.org/plugins/MapsPrinter/) is useful if you want to export all of the print layouts at once rather than one-at-a-time.
 * To export the low-resolution PNG version, there is a "Full" layout in the project that should be exported at 50dpi.
 * To export the full-resolution PNG version, you'll run into a [QGIS issue limiting image dimensions to 32768px in either dimension](https://github.com/qgis/QGIS/issues/41045). To work around this, the project contains four layouts ("Top Left", "Bottom Left", "Top Right", and "Bottom Right") that split the map into four quandrants (each smaller than 32768px in either dimension) - export each of these layouts individually, then stitch them together by hand in GIMP to produce the final image.
-* To export the webmap version, use "Processing Toolbox" -> "Raster tools" -> "Generate XYZ tiles (Directory)", with minimum zoom 10, maximum zoom 17, white background color, JPG tile format at 90% quality, 1024x1024 tile size, output the tiles into `./assets/webmap/tiles`, and skip the Leaflet HTML output. Use the generated tiles with `./assets/webmap/index.html` once the export is complete.
+* To export the webmap version, use "Processing Toolbox" -> "Raster tools" -> "Generate XYZ tiles (Directory)", with minimum zoom 10, maximum zoom 17, white background color, JPG tile format at 90% quality, 1024x1024 tile size, output the tiles into `./webmap/tiles`, and skip the Leaflet HTML output. View the generated tiles with `./webmap/index.html` once the export is complete.
 
 Data Sources
 ------------
