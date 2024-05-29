@@ -20,11 +20,17 @@ Using the Map
 
 ### Download as an image
 
-* [Full-resolution PNG version (57598px width, 43198px height, ~324MB)](TODO)
+Download the [full-resolution PNG version (57598px width, 43198px height, ~324MB)](https://github.com/Uberi/kw-cycling-map/releases/download/v1.0.0/full-res-map.png). You may need to use specialized image viewers that can handle extremely large images - GIMP is one good option, though Firefox and Chromium work surprisingly well too.
 
-### Host the webmap locally
+The image version is designed to be printed as a 4ft wide by 3ft high poster at 1200dpi. You may find it useful as a starting point for your own prints.
 
-Download the [webmap as a ZIP archive (~1.7 GB, ~46k files)](TODO). 
+### Host the webmap online or offline
+
+Download the [webmap as a ZIP archive (~1.7 GB, ~46k files)](https://github.com/Uberi/kw-cycling-map/releases/download/v1.0.0/webmap.zip) and extract it. Some use cases:
+
+* Host the directory locally with any static webserver: `python3 -m http.server`. Now visit `http://localhost:8000` to view an interactive version of the map in your web browser! This also works on mobile if you'd like to have the map available offline on-the-go (e.g., using [ServeIt](https://f-droid.org/en/packages/com.example.flutter_http_server/) on Android, [WorldWideWeb](https://apps.apple.com/us/app/worldwideweb-mobile/id1623006812) on iOS).
+* Host the directory on blob storage or static file hosts such as AWS S3 or DigitalOcean Spaces. Note that many popular static hosting providers limit your uploads to ~1GB and ~10k files, which makes them unsuitable for hosting this map.
+* Depending on your browser, you may be able to just open `index.html` in your browser and see the map. On Ubuntu 22.02 with the Chromium snap package, this works when the directory is somewhere inside the `~/Downloads` folder, but not anywhere else, due to the way the snap package sandboxes filesystem access.
 
 ### Customize the map for your own needs, or contribute directly to this map
 
