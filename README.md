@@ -1,8 +1,7 @@
 Kitchener-Waterloo Cycling Map
 ==============================
 
-
-A map of Kitchener, ON, Canada and Waterloo, ON, Canada, designed with cycling in mind. The map prominently marks:
+An open-source map of Kitchener, ON, Canada and Waterloo, ON, Canada, designed with cycling in mind using QGIS. The map prominently marks:
 
 * Low-speed-limit and high-speed-limit roads.
 * Cycling infrastructure separated into simple "cycling with cars" and "cycling without cars" categories.
@@ -18,12 +17,18 @@ Low-resolution map preview:
 
 Because we combine data directly from multiple regional and municipal open data initiatives, this map has more comprehensive and up-to-date coverage than Google Maps or OpenStreetMap.
 
+This map is similar to [BikeKitchener's excellent webmap](https://kitchenergis.maps.arcgis.com/apps/webappviewer/index.html?id=037131a0c6ce4672babb2c8d1d796928). However, our map is fully open source, usable offline, and covers the entire Region of Waterloo rather than just Kitchener. Subjectively, BikeKitchener's map seems more targeted toward exploring the city and specific areas, while our map is more targeted toward planning trips and routing. As a result, we use both on a regular basis.
+
+If you like this map, you may also like the PDF and ArcGIS-online maps listed at [BikeWR](https://bikewr.com/maps/)!
+
 Using the Map
 -------------
 
 ### View the webmap online
 
-We've [published an interactive browser-based version of the map](https://anthony-zhang.me/kw-cycling-map/) for easy access. However, this won't work offline and depends on us paying for hosting every month to continue being available.
+We've [published an interactive browser-based version of the map](https://anthony-zhang.me/kw-cycling-map/) for easy access. It's exactly the same as the version in the "Host the webmap yourself" section below, but conveniently hosted using GitHub Pages (see the `gh-pages` branch of this repo).
+
+However, this won't work offline, and depends on GitHub's business decision to host the website for free - a situation that rarely lasts forever.
 
 ### Download as an image
 
@@ -31,12 +36,12 @@ Download the [full-resolution PNG version (57598px width, 43198px height, ~324MB
 
 The image version is designed to be printed as a 4ft wide by 3ft high poster at 1200dpi. You may find it useful as a starting point for your own prints.
 
-### Host the webmap online or offline
+### Host the webmap yourself
 
 Download the [webmap as a ZIP archive (~1.7 GB, ~46k files)](https://github.com/Uberi/kw-cycling-map/releases/download/v1.0.0/webmap.zip) and extract it. Some use cases:
 
 * Host the directory locally with any static webserver: `python3 -m http.server`. Now visit `http://localhost:8000` to view an interactive version of the map in your web browser! This also works on mobile if you'd like to have the map available offline on-the-go (e.g., using [ServeIt](https://f-droid.org/en/packages/com.example.flutter_http_server/) on Android, [WorldWideWeb](https://apps.apple.com/us/app/worldwideweb-mobile/id1623006812) on iOS).
-* Host the directory on blob storage or static file hosts such as AWS S3 or DigitalOcean Spaces. Note that many popular static hosting providers limit your uploads to ~1GB and ~10k files, which makes them unsuitable for hosting this map.
+* Host the directory on blob storage or static file hosts such as AWS S3, DigitalOcean Spaces, or GitHub Pages. Note that many other popular static hosting providers limit your uploads to ~1GB and ~10k files, which makes them unsuitable for hosting this map.
 * Depending on your browser, you may be able to just open `index.html` in your browser and see the map. On Ubuntu 22.02 with the Chromium snap package, this works when the directory is somewhere inside the `~/Downloads` folder, but not anywhere else, due to the way the snap package sandboxes filesystem access.
 
 ### Customize the map for your own needs, or contribute directly to this map
